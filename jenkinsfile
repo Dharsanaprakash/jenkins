@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "dharsana2005/my-app"
         REGISTRY = "docker.io"
-        DOCKER_CREDENTIALS_ID = "dockerhub
+        DOCKER_CREDENTIALS_ID = "dockerhub"
         GITHUB_CREDENTIALS_ID = "github"
             }
 
