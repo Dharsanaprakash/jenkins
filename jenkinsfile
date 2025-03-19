@@ -4,10 +4,9 @@ pipeline {
     environment {
         IMAGE_NAME = "dharsana2005/my-app"
         REGISTRY = "docker.io"
-        DOCKER_CREDENTIALS_ID = "dockerhub"
+        DOCKER_CREDENTIALS_ID = "dockerhub
         GITHUB_CREDENTIALS_ID = "github"
-        APP_DIR = "C:\Users\SP-Laptop\OneDrive\Desktop\jenkins"
-    }
+            }
 
     stages {
         stage('Checkout Code') {
@@ -19,7 +18,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "cd $APP_DIR && docker build -t $IMAGE_NAME:latest ."
+                    sh "docker build -t $IMAGE_NAME:latest ."
                 }
             }
         }
@@ -45,7 +44,7 @@ pipeline {
         stage('Deploy using Docker Compose') {
             steps {
                 script {
-                    sh "cd $APP_DIR && docker-compose down && docker-compose up -d"
+                    sh "docker-compose up -d"
                 }
             }
         }
